@@ -148,14 +148,14 @@ const Home = () => {
   const downloadExcel = () => {
     // Convert data to format used by SheetJS
     const sheetData = adCampaignAllLists.map((item) => ({
-      ad_date:item.ad_date,
+      ad_date: item.ad_date,
       attributed_revenue: item.attributed_revenue,
       source: item.source,
       spends: item.spends,
-      attributed_conversions:item.attributed_conversions,
-      type:item.type,
+      attributed_conversions: item.attributed_conversions,
+      type: item.type,
       partition_id: item.partition_id,
-      optimisation_target:item.optimisation_target
+      optimisation_target: item.optimisation_target,
     }));
 
     // Create worksheet from data
@@ -215,11 +215,15 @@ const Home = () => {
       {/* ////                       To show list of ad                 ////////// */}
       {/* //////////////////////////////////////////////////////////////////////// */}
 
-      <CardLayout title="Lists">
+      <CardLayout>
         {/* List row heading */}
-        <button className="btn btn-primary" onClick={downloadExcel}>
-          Export Excel
-        </button>
+
+        <div className={style.downloadExcelButtonDesign}>
+          <button className="btn btn-primary" onClick={downloadExcel}>
+            Export Excel
+          </button>
+        </div>
+
         <CardLayout>
           <div className="row">
             <div className="col-xl-2 col-lg-1 col-md-12 col-sm-6">
