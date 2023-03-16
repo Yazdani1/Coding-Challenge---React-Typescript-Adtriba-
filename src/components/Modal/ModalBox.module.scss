@@ -1,0 +1,30 @@
+.customOverlay {
+    /* background-color: rgba(0, 0, 0, 0.5);  */
+  // background: rgba(36, 123, 160, 0.7);
+  animation-fill-mode: forwards !important;
+//   background: rgba(242, 159, 5, 0.273);
+
+}
+
+/* This modal is for custom modal. If want to change the height , width and custom design of a modal. */
+
+.customModal {
+  /* background: #b2dbbf; */
+  /* max-width: 500px;
+  */
+  /* height: 700px; */
+  animation-fill-mode: forwards !important;
+  width: 100%; 
+}
+
+
+.modalActionButton{
+
+  display: flex;
+  justify-content: right;
+
+  button{
+    margin: 10px;
+  }
+
+}

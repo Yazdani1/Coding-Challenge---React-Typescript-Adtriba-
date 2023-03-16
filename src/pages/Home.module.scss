@@ -1,0 +1,84 @@
+@import "../styles/Variables.scss";
+@import "../styles/Mixin.scss";
+
+
+
+.createButton{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+
+.expenseBookCategory{
+    @include inputFieldDesign();
+}
+
+.expenseTitle{
+    @include inputFieldDesign();
+
+}
+
+.expenseAmmount{
+    @include inputFieldDesign();
+
+}
+
+.expenseCategorySelect{
+    @include inputFieldDesign();
+
+}
+
+.expenseChartSelection{
+    height: 30px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.selectChartDataTab{
+    display: flex;
+    background-color: white;
+    margin-bottom: 20px;
+    width: fit-content;
+    border-radius: 5px;
+    cursor: pointer;
+
+    h6{
+        text-align: center;
+        justify-content: center;
+        padding: 5px;
+    }
+
+    .expenseCategoryButton{
+        border-right: 1px dotted black;
+        padding-right: 10px;
+        h5{
+            text-align: center;
+        }
+       
+    }
+
+    .expenseCategoryButtonActive {
+        border-bottom: 2px solid orange;
+        @extend .expenseCategoryButton;
+        padding-right: 10px;
+
+
+    }
+
+    .expenseTotalExpenseButton{
+        padding-left: 10px;
+    }
+
+    .expenseTotalExpenseButtonActive{
+        border-bottom: 2px solid orange;
+        @extend .expenseTotalExpenseButton;
+        padding-right: 10px;
+        
+        h6{
+            text-align: center;
+            justify-content: center;
+            padding: 5px;
+        }
+    }
+}
