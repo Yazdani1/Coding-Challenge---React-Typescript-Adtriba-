@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "react-datepicker/dist/react-datepicker.css";
 import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
+import * as XLSX from "xlsx";
 
 import PageLayout from "../layouts/PageLayout";
 import CardLayout from "../components/CardLayout/CardLayout";
@@ -140,6 +141,43 @@ const Home = () => {
     }
   };
 
+  /****************************************/
+  /*********To download excel file ********/
+  /****************************************/
+
+  const downloadExcel = () => {
+    // Convert data to format used by SheetJS
+    const sheetData = adCampaignAllLists.map((item) => ({
+      ad_date:item.ad_date,
+      attributed_revenue: item.attributed_revenue,
+      source: item.source,
+      spends: item.spends,
+      attributed_conversions:item.attributed_conversions,
+      type:item.type,
+      partition_id: item.partition_id,
+      optimisation_target:item.optimisation_target
+    }));
+
+    // Create worksheet from data
+    const worksheet = XLSX.utils.json_to_sheet(sheetData);
+
+    // Create workbook and add worksheet
+    const workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, "Sheet1");
+
+    // Generate Excel file and download it
+    const fileData = XLSX.write(workbook, { bookType: "xlsx", type: "array" });
+    const blob = new Blob([fileData], {
+      type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    });
+    const url = window.URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.setAttribute("download", "ad_campaign.xlsx");
+    document.body.appendChild(link);
+    link.click();
+  };
+
   useEffect(() => {
     loadAdCampaign();
   }, []);
@@ -179,6 +217,9 @@ const Home = () => {
 
       <CardLayout title="Lists">
         {/* List row heading */}
+        <button className="btn btn-primary" onClick={downloadExcel}>
+          Export Excel
+        </button>
         <CardLayout>
           <div className="row">
             <div className="col-xl-2 col-lg-1 col-md-12 col-sm-6">
