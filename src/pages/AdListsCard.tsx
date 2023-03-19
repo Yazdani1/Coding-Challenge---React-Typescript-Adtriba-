@@ -8,7 +8,7 @@ import { deleteAdCampaign } from "../services/API";
 
 interface AdListsCardProps {
   adItems: AdCampaignProps;
-  adCampaignLists: () => void;
+  adCampaignLists?: () => void;
 }
 
 const AdListsCard: FC<AdListsCardProps> = ({ adItems, adCampaignLists }) => {
@@ -24,7 +24,7 @@ const AdListsCard: FC<AdListsCardProps> = ({ adItems, adCampaignLists }) => {
         toast.success("Ad Deleted successfully", {
           position: toast.POSITION.TOP_RIGHT,
         });
-        adCampaignLists();
+        adCampaignLists?.();
       }
     } catch (error: any) {
       toast.error(error.response && error.response.data.error, {

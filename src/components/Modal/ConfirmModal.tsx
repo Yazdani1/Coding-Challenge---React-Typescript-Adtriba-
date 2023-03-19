@@ -42,7 +42,7 @@ const ConfirmModal: FC<ConfirmModalProps> = ({
         <button className="btn btn-danger" onClick={onCloseModal}>
           Cancel
         </button>
-        <button className="btn btn-info" onClick={confirmDelete}>
+        <button className="btn btn-success" onClick={()=>{confirmDelete?.();onCloseModal?.()}}>
           Confirm
         </button>
       </div>

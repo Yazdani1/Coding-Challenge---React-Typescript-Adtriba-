@@ -55,6 +55,7 @@ const Home = () => {
 
   const onSubmitCreateAdCampaign = async () => {
     try {
+      
       const payload: CreateAdCampaignProps = {
         ad_date: isoDate,
         source: adSource,
@@ -272,6 +273,7 @@ const Home = () => {
         title="Create AdCampaign"
         onSaveButton={onSubmitCreateAdCampaign}
         onResetButton={resetInputFields}
+        showButton={true}
       >
         <label>Select Ad Date:</label>
 

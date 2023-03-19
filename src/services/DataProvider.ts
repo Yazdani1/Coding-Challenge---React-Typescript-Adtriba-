@@ -1,6 +1,5 @@
 interface IBase {
   _id: string;
-  date: string;
 }
 
 // Type of ad campaign
@@ -26,6 +25,18 @@ export interface AdCampaignProps extends IBase {
   spends:number;
   partition_id: string;
   optimisation_target:AdCampaignOptimisation_Target
+}
+
+
+export interface AdCampaignExcelDataProps extends IBase {
+  date:string,
+  source:string,
+  attributed_conversions:number,
+  attributed_revenue:number,
+  type:string,
+  spends:number,
+  partition_id:number,
+  optimisation_target:string
 }
 
 
