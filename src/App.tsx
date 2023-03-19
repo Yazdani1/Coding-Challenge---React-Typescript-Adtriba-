@@ -10,8 +10,8 @@ const App = () => {
   return (
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/excelfile-uploads" element={<ExcelFileUpload />} />
+          <Route path="/" element={<ExcelFileUpload />} />
+          <Route path="/create-ad-posts" element={<Home />} />
 
         </Routes>
         <ToastContainer autoClose={8000} />

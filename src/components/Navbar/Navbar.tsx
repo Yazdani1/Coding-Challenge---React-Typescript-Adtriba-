@@ -7,15 +7,17 @@ const Navbar = () => {
   return (
     <nav className={navbarStyle.navbarContainer}>
       <ul>
+        
+
         <li className="nav-item">
           <Link to={"/"} style={{ textDecoration: "none", color: "white" }}>
-            Home
+            Excel File Uploads
           </Link>
         </li>
 
         <li className="nav-item">
-          <Link to={"/excelfile-uploads"} style={{ textDecoration: "none", color: "white" }}>
-            Excel File Uploads
+          <Link to={"/create-ad-posts"} style={{ textDecoration: "none", color: "white" }}>
+          Create Ad Posts
           </Link>
         </li>
 

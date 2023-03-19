@@ -82,17 +82,23 @@ const ExcelFileUpload = () => {
     []
   );
 
+  const [loadMoreData, setLoadMoreData] = useState<boolean>(false);
+
+
   const loadAllExcelData = async () => {
+    setLoadMoreData(true);
     try {
       const res = await getExcelSheetUploadedData(limit);
 
       if (res) {
         setAllExcelData(res.data.allData);
+        setLoadMoreData(false);
       }
     } catch (error: any) {
       toast.error(error.response && error.response.data.error, {
         position: toast.POSITION.TOP_RIGHT,
       });
+      setLoadMoreData(false);
     }
   };
 
@@ -173,8 +179,11 @@ const ExcelFileUpload = () => {
   /****************************************/
   /********* To delete all excel data *****/
   /****************************************/
+  const [showLoadingForDelete, setShowLoadingForDelete] = useState<boolean>(false);
 
   const onClickDeleteAllExcelData = async () => {
+    setShowLoadingForDelete(true);
+
     try {
       const res = await deleteAllExcelData();
 
@@ -184,11 +193,15 @@ const ExcelFileUpload = () => {
         });
         loadAllExcelData();
         loadExcelDataForChart();
+        setShowLoadingForDelete(false);
+
       }
     } catch (error: any) {
       toast.error(error.response && error.response.data.error, {
         position: toast.POSITION.TOP_RIGHT,
       });
+      setShowLoadingForDelete(false);
+
     }
   };
 
@@ -278,6 +291,7 @@ const ExcelFileUpload = () => {
             Choose a file:
             <input
               type="file"
+              accept=".xlsx, .xls, .csv"
               onChange={(event) => setFile(event.target.files?.[0] || null)}
             />
           </label>
@@ -426,7 +440,7 @@ const ExcelFileUpload = () => {
           {allExcelData.length > 0 && (
             <div className={style.buttonContainer}>
               <button className="btn btn-danger" onClick={handleOpenModal}>
-                Delete All
+                {showLoadingForDelete ? "Deleting all data...":"Delete All"}
               </button>
 
               <button className="btn btn-success" onClick={downloadExcel}>
@@ -491,7 +505,7 @@ const ExcelFileUpload = () => {
               className={style.loadMoreButton}
               onClick={handleLoadMorePagination}
             >
-              <span>Load More</span>
+              <span> {loadMoreData ? "Loading data..." : "Load More"} </span>
             </div>
           </div>
         )}

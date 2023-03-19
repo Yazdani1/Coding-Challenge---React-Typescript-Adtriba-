@@ -111,14 +111,14 @@ const ExcelAdDataCard: FC<ExcelAdDataCardProps> = ({
         <div className="row">
           <div className="col-xl-6 col-lg-6 col-md-12 col-sm-12">
             <CardLayout>
-              <h6>Date</h6>
+              <h6>Date:</h6>
               <p>{moment(addData.date).format("MMM Do YY")}</p>
             </CardLayout>
           </div>
 
           <div className="col-xl-6 col-lg-6 col-md-12 col-sm-12">
             <CardLayout>
-              <h6>Attributed Revenue</h6>
+              <h6>Attributed Revenue:</h6>
               <p>{addData.attributed_revenue}</p>
             </CardLayout>
           </div>
@@ -127,14 +127,14 @@ const ExcelAdDataCard: FC<ExcelAdDataCardProps> = ({
         <div className="row">
           <div className="col-xl-6 col-lg-6 col-md-12 col-sm-12">
             <CardLayout>
-              <h6>Attributed Conversions</h6>
+              <h6>Attributed Conversions:</h6>
               <p>{addData.attributed_conversions}</p>
             </CardLayout>
           </div>
 
           <div className="col-xl-6 col-lg-6 col-md-12 col-sm-12">
             <CardLayout>
-              <h6>Optimisation Target</h6>
+              <h6>Optimisation Target:</h6>
               <p>{addData.optimisation_target}</p>
             </CardLayout>
           </div>
@@ -143,14 +143,14 @@ const ExcelAdDataCard: FC<ExcelAdDataCardProps> = ({
         <div className="row">
           <div className="col-xl-6 col-lg-6 col-md-12 col-sm-12">
             <CardLayout>
-              <h6>Source</h6>
+              <h6>Source:</h6>
               <p>{addData.source}</p>
             </CardLayout>
           </div>
 
           <div className="col-xl-6 col-lg-6 col-md-12 col-sm-12">
             <CardLayout>
-              <h6>Spends</h6>
+              <h6>Spends:</h6>
               <p>{addData.spends}</p>
             </CardLayout>
           </div>
@@ -159,14 +159,14 @@ const ExcelAdDataCard: FC<ExcelAdDataCardProps> = ({
         <div className="row">
           <div className="col-xl-6 col-lg-6 col-md-12 col-sm-12">
             <CardLayout>
-              <h6>Type</h6>
+              <h6>Type:</h6>
               <p>{addData.type}</p>
             </CardLayout>
           </div>
 
           <div className="col-xl-6 col-lg-6 col-md-12 col-sm-12">
             <CardLayout>
-              <h6>Partition Id</h6>
+              <h6>Partition Id:</h6>
               <p>{addData.partition_id}</p>
             </CardLayout>
           </div>
