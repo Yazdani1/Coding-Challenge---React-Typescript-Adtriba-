@@ -1,0 +1,135 @@
+@import "../../styles/Variables.scss";
+@import "../../styles/Mixin.scss";
+
+.expenseBookCategory {
+  @include inputFieldDesign();
+}
+
+.expenseTitle {
+  @include inputFieldDesign();
+}
+
+.expenseAmmount {
+  @include inputFieldDesign();
+}
+
+.expenseCategorySelect {
+  @include inputFieldDesign();
+}
+
+.expenseChartSelection {
+  height: 30px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.selectChartDataTab {
+  display: flex;
+  background-color: white;
+  margin-bottom: 20px;
+  width: fit-content;
+  border-radius: 5px;
+  cursor: pointer;
+
+  h6 {
+    text-align: center;
+    justify-content: center;
+    padding: 5px;
+  }
+
+  .expenseCategoryButton {
+    border-right: 1px dotted black;
+    padding-right: 10px;
+    h5 {
+      text-align: center;
+    }
+  }
+
+  .expenseCategoryButtonActive {
+    border-bottom: 2px solid orange;
+    @extend .expenseCategoryButton;
+    padding-right: 10px;
+  }
+
+  .expenseTotalExpenseButton {
+    padding-left: 10px;
+  }
+
+  .expenseTotalExpenseButtonActive {
+    border-bottom: 2px solid orange;
+    @extend .expenseTotalExpenseButton;
+    padding-right: 10px;
+
+    h6 {
+      text-align: center;
+      justify-content: center;
+      padding: 5px;
+    }
+  }
+}
+
+.itemContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.loadMoreButtonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+
+  .loadMoreButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: tomato;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 20px;
+    width: fit-content;
+    cursor: pointer;
+    &:hover {
+      background-color: #0069d9;
+    }
+  }
+}
+
+.postCountContainer {
+  position: relative;
+
+  .postCountDesign {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+  }
+}
+
+.searchFilterandActionContainer {
+  display: flex;
+  justify-content: space-between;
+
+  .searchFilterItemContainer {
+    display: flex;
+
+    .seletTypeDesign {
+    }
+
+    .seletTargetDesign {
+      margin-left: 10px;
+    }
+
+    .filterDataButton {
+      margin-left: 10px;
+    }
+  }
+  .buttonContainer {
+    display: flex;
+ 
+    button {
+      margin-right: 10px;
+      max-height: 50px;
+    }
+  }
+}
