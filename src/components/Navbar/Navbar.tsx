@@ -13,6 +13,12 @@ const Navbar = () => {
           </Link>
         </li>
 
+        <li className="nav-item">
+          <Link to={"/excelfile-uploads"} style={{ textDecoration: "none", color: "white" }}>
+            Excel File Uploads
+          </Link>
+        </li>
+
       </ul>
     </nav>
   );

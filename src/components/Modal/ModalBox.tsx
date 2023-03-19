@@ -11,6 +11,7 @@ interface ModalBoxProps {
   children: ReactNode;
   onSaveButton?: () => void;
   onResetButton?: () => void;
+  showButton?: boolean;
 }
 
 const ModalBox: FC<ModalBoxProps> = ({
@@ -20,6 +21,7 @@ const ModalBox: FC<ModalBoxProps> = ({
   children,
   onSaveButton,
   onResetButton,
+  showButton,
 }) => {
   return (
     <Modal
@@ -36,11 +38,16 @@ const ModalBox: FC<ModalBoxProps> = ({
 
       {children}
 
-      <div className={modalBoxStyle.modalActionButton}>
-        <button onClick={onResetButton} className="btn btn-danger" >Reset</button>
-        <button onClick={onSaveButton} className="btn btn-success" >Save</button>
-      </div>
-
+      {showButton && (
+        <div className={modalBoxStyle.modalActionButton}>
+          <button onClick={onResetButton} className="btn btn-danger">
+            Reset
+          </button>
+          <button onClick={onSaveButton} className="btn btn-success">
+            Save
+          </button>
+        </div>
+      )}
     </Modal>
   );
 };
